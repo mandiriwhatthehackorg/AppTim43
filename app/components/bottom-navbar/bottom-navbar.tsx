@@ -1,5 +1,6 @@
 import * as React from "react"
 import { View, ViewStyle, TextStyle, SafeAreaView, TouchableHighlight } from "react-native"
+import { NavigationScreenProps } from "react-navigation"
 import { Icon } from "../icon"
 import { Text } from "../text"
 import { spacing } from "../../theme"
@@ -41,7 +42,11 @@ class NavIcon extends React.Component<any, any> {
   }
 }
 
-export class BottomNavbar extends React.Component<any, any> {
+export interface BottomNavbarNavigation extends NavigationScreenProps<{}> {}
+
+export class BottomNavbar extends React.Component<BottomNavbarNavigation, any> {
+  goToSummary = () => this.props.navigation.navigate("summary")
+
   render () {
     const PART: ViewStyle = {
       width: "35%",
@@ -73,7 +78,7 @@ export class BottomNavbar extends React.Component<any, any> {
           <View style={MIDDLE}>
             <TouchableHighlight
               underlayColor="#eba80e"
-              onPress={() => {}}
+              onPress={this.goToSummary}
               style={CIRCLE}
             >
               <View>

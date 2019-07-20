@@ -103,6 +103,8 @@ class HomeIcon extends React.Component<any, {}> {
   }
 }
 
+
+
 class ModalIntro extends React.Component<any, any> {
   state = {
     isModalVisible: true
@@ -110,6 +112,10 @@ class ModalIntro extends React.Component<any, any> {
 
   toggleModal = () => {
     this.setState({ isModalVisible: !this.state.isModalVisible })
+  }
+  goToSummary = () => {
+    this.setState({ isModalVisible: false })
+    this.props.navigation.navigate("summary")
   }
 
   render () {
@@ -158,7 +164,12 @@ class ModalIntro extends React.Component<any, any> {
           <Image source={intro} style={IMAGE} />
           <Text style={TITLE} text="Uang Kamu Cepat Habis?" />
           <Text style={DESC} text="Mungkin ada yang salah dengan caramu mengelola keuangan. Yuk coba Financial Advisor dari Mandiri!" />
-          <Button textStyle={BUTTON_TEXT} style={BUTTON} text="COBA SEKARANG" />
+          <Button
+            textStyle={BUTTON_TEXT}
+            style={BUTTON}
+            text="COBA SEKARANG"
+            onPress={this.goToSummary}
+          />
         </View>
       </Modal>
     )
@@ -169,12 +180,16 @@ export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   nextScreen = () => this.props.navigation.navigate("login")
+  goToSummary = () => this.props.navigation.navigate("summary")
 
   render () {
     return (
       <View style={{ flex: 1 }}>
-        <ModalIntro isVisible={true} />
         <Screen style={{ padding: spacing[5] }}>
+          <ModalIntro
+            isVisible={true}
+            navigation={this.props.navigation}
+          />
           {/* Header */}
           <View style={ROW}>
             <View style={PROFILE}>
@@ -232,9 +247,9 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           <View>
             <Text>REKOMENDASI</Text>
           </View>
-          <Button text="test" onPress={this.nextScreen} />
+          <Button text="test" onPress={this.goToSummary} />
         </Screen>
-        <BottomNavbar />
+        <BottomNavbar navigation={this.props.navigation} />
       </View>
     )
   }
