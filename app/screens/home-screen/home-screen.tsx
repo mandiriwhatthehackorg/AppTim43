@@ -77,7 +77,7 @@ const PROFILE_NAME: TextStyle = {
   fontWeight: "bold"
 }
 const ICON_LIST: ViewStyle = {
-  marginVertical: spacing[3],
+  marginVertical: spacing[1],
   alignItems: "center",
   justifyContent: "center"
 }
@@ -94,11 +94,24 @@ class HomeIcon extends React.Component<any, {}> {
       fontSize: 10,
       fontWeight: "bold"
     }
+    const TOUCH: ViewStyle = {
+      paddingVertical: spacing[3],
+      borderRadius: 5,
+      justifyContent: "center",
+      alignItems: "center"
+    }
+    const VIEW: ViewStyle = {
+      alignItems: "center",
+      width: 80,
+      justifyContent: "center"
+    }
     return (
-      <View style={{ alignItems: "center", width: 80 }}>
-        <Icon style={{ height: 40 }} icon={this.props.iconName} />
-        <Text style={ICON_TEXT}>{this.props.text}</Text>
-      </View>
+      <TouchableHighlight style={TOUCH} underlayColor="#e8e8e8" onPress={() => {}}>
+        <View style={VIEW}>
+          <Icon style={{ height: 40 }} icon={this.props.iconName} />
+          <Text style={ICON_TEXT}>{this.props.text}</Text>
+        </View>
+      </TouchableHighlight>
     )
   }
 }
