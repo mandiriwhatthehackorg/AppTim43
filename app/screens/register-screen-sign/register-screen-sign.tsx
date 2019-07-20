@@ -1,6 +1,7 @@
 import * as React from "React"
 import { View, ViewStyle, TextStyle, SafeAreaView } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
+// import SignaturePad from 'react-native-signature-pad'
 import { Screen } from "../../components/screen"
 import { Text } from "../../components/text"
 import { TextField } from "../../components/text-field"
@@ -86,11 +87,11 @@ const FOOTER: ViewStyle = {
   paddingVertical: spacing[4]
 }
 
-export interface RegisterScreenKycProps extends NavigationScreenProps<{}> {}
+export interface RegisterScreenSignProps extends NavigationScreenProps<{}> {}
 
-export class RegisterScreenKyc extends React.Component<RegisterScreenKycProps, {}> {
+export class RegisterScreenSign extends React.Component<RegisterScreenSignProps, {}> {
   goBack = () => this.props.navigation.goBack(null)
-  confirm = () => this.props.navigation.navigate("register_sign")
+  confirm = () => this.props.navigation.navigate("register_otp")
 
   render () {
     return (
@@ -106,24 +107,17 @@ export class RegisterScreenKyc extends React.Component<RegisterScreenKycProps, {
             {/* State */}
             <View style={STATE}>
               <View style={STATE_VIEW}>
-                <Text text="4" style={STATE_TEXT} />
+                <Text text="5" style={STATE_TEXT} />
               </View>
               <Text text="/ 5" style={STATE_ALL} />
             </View>
             {/* Form */}
             <View style={{ marginTop: spacing[5] }}>
-              <TextField
-                label="Nama Gadis Ibu Kandung"
-                placeholder="Sarah Doe"
-              />
-              <TextField
-                label="Nomor KTP"
-                placeholder="XXXXXXXXXXXXXXXX"
-              />
-              <TextField
-                label="Kantor Cabang"
-                placeholder="KCP Jakarta Barat"
-              />
+              {/* <SignaturePad
+                onError={this._signaturePadError}
+                onChange={this._signaturePadChange}
+                style={{flex: 1, backgroundColor: 'white'}}
+              /> */}
             </View>
             <View style={[ROW, { marginTop: spacing[4] }]}>
               <View style={UPLOAD}>

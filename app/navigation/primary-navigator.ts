@@ -7,6 +7,7 @@ import { RegisterScreen } from "../screens/register-screen"
 import { RegisterScreenOtp } from "../screens/register-screen-otp"
 import { RegisterScreenSaving } from "../screens/register-screen-saving"
 import { RegisterScreenKyc } from "../screens/register-screen-kyc"
+import { RegisterScreenSign } from "../screens/register-screen-sign"
 
 export const PrimaryNavigator = createStackNavigator(
   {
@@ -17,7 +18,8 @@ export const PrimaryNavigator = createStackNavigator(
     register: { screen: RegisterScreen },
     register_otp: { screen: RegisterScreenOtp },
     register_saving: { screen: RegisterScreenSaving },
-    register_kyc: { screen: RegisterScreenKyc }
+    register_kyc: { screen: RegisterScreenKyc },
+    register_sign: { screen: RegisterScreenSign }
   },
   {
     headerMode: "none",

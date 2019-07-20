@@ -1,11 +1,12 @@
 import * as React from "react"
-import { View, Image, ViewStyle, TextStyle } from "react-native"
+import { View, TouchableHighlight, ViewStyle, TextStyle } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { mergeAll, flatten } from "ramda"
 import { Text } from "../../components/text"
 import { Screen } from "../../components/screen"
 import { Icon } from "../../components/icon"
 import { Button } from "../../components/button"
+import { BottomNavbar } from "../../components/bottom-navbar"
 import { color, spacing } from "../../theme"
 
 const ROW: ViewStyle = {
@@ -131,14 +132,22 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
                 <Text style={CARD_NUMBER}>900 00 190 568 93</Text>
               </View>
             </View>
-            <View style={NEWACC}>
-              <View style={CARD_ADD}>
-                <Text style={{ fontWeight: "bold" }}>+</Text>
-              </View>
-              <View>
-                <Text style={CARD_TITLE}>PEMBUKAAN REKENING BARU</Text>
-                <Text style={CARD_NUMBER}>Buka Rekening / Tabungan & Deposito</Text>
-              </View>
+            <View>
+              <TouchableHighlight
+                underlayColor="#3e84b3"
+                onPress={this.nextScreen}
+                style={NEWACC}
+              >
+                <React.Fragment>
+                  <View style={CARD_ADD}>
+                    <Text style={{ fontWeight: "bold" }}>+</Text>
+                  </View>
+                  <View>
+                    <Text style={CARD_TITLE}>PEMBUKAAN REKENING BARU</Text>
+                    <Text style={CARD_NUMBER}>Buka Rekening / Tabungan & Deposito</Text>
+                  </View>
+                </React.Fragment>
+              </TouchableHighlight>
             </View>
           </View>
           {/* Features */}
@@ -160,6 +169,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           </View>
           <Button text="test" onPress={this.nextScreen} />
         </Screen>
+        <BottomNavbar />
       </View>
     )
   }

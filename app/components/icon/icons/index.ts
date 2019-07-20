@@ -6,7 +6,12 @@ export const icons = {
   pinjam: require("./pinjam.png"),
   kredit: require("./kredit.png"),
   asuransi: require("./asuransi.png"),
-  investasi: require("./investasi.png")
+  investasi: require("./investasi.png"),
+  home: require("./home.png"),
+  history: require("./history.png"),
+  star: require("./star.png"),
+  profile: require("./profilenav.png"),
+  wallet: require("./wallet.png")
 }
 
 export type IconTypes = keyof typeof icons
