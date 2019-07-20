@@ -58,6 +58,8 @@ export interface LoginScreenProps extends NavigationScreenProps<{}> {}
 
 export class LoginScreen extends React.Component<LoginScreenProps, {}> {
   rememberMe = () => {}
+  login = () => this.props.navigation.navigate("home")
+  goToRegister = () => this.props.navigation.navigate("register")
 
   render () {
     return (
@@ -89,11 +91,13 @@ export class LoginScreen extends React.Component<LoginScreenProps, {}> {
               <Text style={FORGOT} text="Lupa Password?" />
             </View>
             <Button
+              onPress={this.login}
               style={LOGIN}
               textStyle={{ fontSize: 14, fontWeight: "600" }}
               text="MASUK"
             />
             <Button
+              onPress={this.goToRegister}
               style={REGISTER}
               textStyle={{ fontSize: 14, fontWeight: "600", color: "#003d79" }}
               text="BELUM PUNYA AKUN?"

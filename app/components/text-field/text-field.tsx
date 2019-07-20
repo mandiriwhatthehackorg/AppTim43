@@ -23,7 +23,7 @@ const INPUT: TextStyle = {
 
 // underline input
 const UNDERLINE: ViewStyle = {
-  borderBottomColor: "#6ab2e2",
+  borderBottomColor: "#cccccc",
   borderBottomWidth: 2
 }
 
