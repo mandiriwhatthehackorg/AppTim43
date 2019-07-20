@@ -4,6 +4,7 @@ import { DemoScreen } from "../screens/demo-screen"
 import { HomeScreen } from "../screens/home-screen"
 import { LoginScreen } from "../screens/login-screen"
 import { RegisterScreen } from "../screens/register-screen"
+import { RegisterScreenOtp } from "../screens/register-screen-otp"
 
 export const PrimaryNavigator = createStackNavigator(
   {
@@ -11,7 +12,8 @@ export const PrimaryNavigator = createStackNavigator(
     welcome: { screen: WelcomeScreen },
     demo: { screen: DemoScreen },
     login: { screen: LoginScreen },
-    register: { screen: RegisterScreen }
+    register: { screen: RegisterScreen },
+    register_otp: { screen: RegisterScreenOtp }
   },
   {
     headerMode: "none",

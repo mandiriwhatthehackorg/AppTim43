@@ -58,14 +58,26 @@ const REGISTER: ViewStyle = {
   borderColor: "#47b9de",
   borderWidth: 2
 }
+const OTP_INTRO: TextStyle = {
+  color: "#aaa",
+  textAlign: "center",
+  marginBottom: spacing[3],
+  marginHorizontal: spacing[4],
+  fontSize: 14
+}
+const OTP_INPUT: TextStyle = {
+  textAlign: "center",
+  fontSize: 45,
+  marginBottom: spacing[5]
+}
 const FOOTER: ViewStyle = {
   paddingHorizontal: spacing[5],
   paddingVertical: spacing[4]
 }
 
-export interface RegisterScreenProps extends NavigationScreenProps<{}> {}
+export interface RegisterScreenOtpProps extends NavigationScreenProps<{}> {}
 
-export class RegisterScreen extends React.Component<RegisterScreenProps, {}> {
+export class RegisterScreenOtp extends React.Component<RegisterScreenOtpProps, {}> {
   goBack = () => this.props.navigation.goBack(null)
   confirm = () => this.props.navigation.navigate("register_otp")
 
@@ -77,66 +89,34 @@ export class RegisterScreen extends React.Component<RegisterScreenProps, {}> {
             leftIcon="back"
             onLeftPress={this.goBack}
             titleStyle={HEADER_TITLE}
-            headerText="Konfirmasi Data Diri Anda"
+            headerText="Masukkan Kode OTP"
           />
           <View style={{ paddingHorizontal: spacing[5] }}>
             {/* State */}
             <View style={STATE}>
               <View style={STATE_VIEW}>
-                <Text text="1" style={STATE_TEXT} />
+                <Text text="2" style={STATE_TEXT} />
               </View>
               <Text text="/ 5" style={STATE_ALL} />
             </View>
             {/* Form */}
             <View style={{ marginTop: spacing[5] }}>
-              <View style={ROW}>
-                <TextField
-                  style={INPUT_NAME}
-                  label="Nama Depan"
-                  placeholder="John"
-                />
-                <TextField
-                  style={INPUT_NAME}
-                  label="Nama Belakang"
-                  placeholder="John"
-                />
-              </View>
-              <View style={ROW}>
-                <TextField
-                  style={INPUT_DATE}
-                  label="Tanggal"
-                  placeholder="XX"
-                />
-                <TextField
-                  style={INPUT_DATE}
-                  label="Bulan"
-                  placeholder="XX"
-                />
-                <TextField
-                  style={INPUT_DATE}
-                  label="Tahun"
-                  placeholder="XXXX"
-                />
-              </View>
-              <TextField
-                label="Nomor Ponsel"
-                placeholder="+62XXXXXXXXX"
+              <Text
+                style={OTP_INTRO}
+                text="Silakan masukkan kode OTP yang telah kami kirimkan ke email Anda."
               />
               <TextField
-                label="Alamat Email"
-                placeholder="doe@example.com"
+                style={{ marginHorizontal: spacing[5] * 2 }}
+                inputStyle={OTP_INPUT}
+                keyboardType="numeric"
+                maxLength={6}
+                placeholder="XXXXXX"
               />
             </View>
           </View>
         </Screen>
         <SafeAreaView>
           <View style={FOOTER}>
-            <Button
-              onPress={this.goToRegister}
-              style={REGISTER}
-              textStyle={{ fontSize: 14, fontWeight: "600", color: "#003d79" }}
-              text="UBAH DATA"
-            />
             <Button
               onPress={this.confirm}
               style={LOGIN}
