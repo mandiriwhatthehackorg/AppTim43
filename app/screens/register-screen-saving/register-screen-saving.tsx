@@ -72,7 +72,7 @@ export interface RegisterScreenSavingProps extends NavigationScreenProps<{}> {}
 
 export class RegisterScreenSaving extends React.Component<RegisterScreenSavingProps, {}> {
   goBack = () => this.props.navigation.goBack(null)
-  confirm = () => this.props.navigation.navigate("register_otp")
+  confirm = () => this.props.navigation.navigate("register_kyc")
   _renderItem ({item, index}) {
     return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
   }
