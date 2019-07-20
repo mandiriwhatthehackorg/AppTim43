@@ -13,12 +13,9 @@ const CONTAINER: ViewStyle = {
 
 // the base styling for the TextInput
 const INPUT: TextStyle = {
-  fontFamily: typography.primary,
   color: "#003d78",
   minHeight: 44,
-  fontSize: 18,
-  fontWeight: "500",
-  backgroundColor: color.palette.white,
+  fontSize: 18
 }
 
 // underline input

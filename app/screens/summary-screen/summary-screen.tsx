@@ -18,7 +18,7 @@ const CONTENT: ViewStyle = {
   backgroundColor: "#fff",
   height: "100%",
   paddingHorizontal: spacing[5],
-  paddingTop: spacing[5] * 3 + spacing[3]
+  paddingTop: spacing[5] * 4
 }
 const ACCOUNT: ViewStyle = {
   position: "absolute",
@@ -29,7 +29,8 @@ const ACCOUNT: ViewStyle = {
   right: 0,
   borderRadius: 5,
   paddingHorizontal: spacing[5],
-  paddingVertical: spacing[4],
+  paddingTop: spacing[4],
+  paddingBottom: spacing[5],
   shadowColor: "black",
   shadowOffset: {
     width: 0,
@@ -86,6 +87,17 @@ const PROGRESS_NUMBER: TextStyle = {
   fontSize: 20,
   fontWeight: "500",
   marginTop: spacing[1]
+}
+const PROGRESS_DATE: TextStyle = {
+  color: "#47b9de",
+  fontWeight: "600",
+  width: "35%"
+}
+const PROGRESS_UNTIL: TextStyle = {
+  color: "#ccd0d1",
+  fontWeight: "600",
+  width: "30%",
+  textAlign: "center"
 }
 const HISTORY: TextStyle = {
   textAlign: "center",
@@ -179,6 +191,11 @@ export class SummaryScreen extends React.Component<SummaryScreenProps, {}> {
             </View>
             {/* Progress */}
             <View>
+              <View style={ROW}>
+                <Text style={PROGRESS_DATE} text="01 / 07 / 2019" />
+                <Text style={PROGRESS_UNTIL} text="sampai" />
+                <Text style={[PROGRESS_DATE, {textAlign: "right"}]} text="01 / 07 / 2019" />
+              </View>
               <View style={PROGRESS_BASE}>
                 <View style={PROGRESS_BAR} />
               </View>

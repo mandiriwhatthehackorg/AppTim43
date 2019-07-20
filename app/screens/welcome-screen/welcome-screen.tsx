@@ -16,7 +16,7 @@ const CONTAINER: ViewStyle = {
 }
 const TEXT: TextStyle = {
   color: color.palette.white,
-  fontFamily: "Montserrat",
+  fontFamily: "montserrat",
 }
 const BOLD: TextStyle = { fontWeight: "bold" }
 const HEADER: TextStyle = {

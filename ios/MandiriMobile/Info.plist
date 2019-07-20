@@ -55,34 +55,34 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Montserrat-Black.ttf</string>
-		<string>Montserrat-BlackItalic.ttf</string>
-		<string>Montserrat-Bold.ttf</string>
-		<string>Montserrat-BoldItalic.ttf</string>
-		<string>Montserrat-ExtraBold.ttf</string>
-		<string>Montserrat-ExtraBoldItalic.ttf</string>
-		<string>Montserrat-ExtraLight.ttf</string>
-		<string>Montserrat-ExtraLightItalic.ttf</string>
-		<string>Montserrat-Italic.ttf</string>
-		<string>Montserrat-Light.ttf</string>
-		<string>Montserrat-LightItalic.ttf</string>
-		<string>Montserrat-Medium.ttf</string>
-		<string>Montserrat-MediumItalic.ttf</string>
-		<string>Montserrat-Regular.ttf</string>
-		<string>Montserrat-SemiBold.ttf</string>
-		<string>Montserrat-SemiBoldItalic.ttf</string>
-		<string>Montserrat-Thin.ttf</string>
-		<string>Montserrat-ThinItalic.ttf</string>
-		<string>MyriadPro-Bold.OTF</string>
-		<string>MyriadPro-BoldCondensed.OTF</string>
-		<string>MyriadPro-BoldCondensedItalic.OTF</string>
-		<string>MyriadPro-BoldItalic.OTF</string>
-		<string>MyriadPro-Condensed.OTF</string>
-		<string>MyriadPro-CondensedItalic.OTF</string>
-		<string>MyriadPro-Light.otf</string>
-		<string>MyriadPro-Regular.OTF</string>
-		<string>MyriadPro-Semibold.OTF</string>
-		<string>MyriadPro-SemiboldItalic.OTF</string>
+		<string>myriadpro_bold.otf</string>
+		<string>myriadpro_boldcondensed.otf</string>
+		<string>myriadpro_boldcondenseditalic.otf</string>
+		<string>myriadpro_bolditalic.otf</string>
+		<string>myriadpro_condensed.otf</string>
+		<string>myriadpro_condenseditalic.otf</string>
+		<string>myriadpro_light.otf</string>
+		<string>myriadpro_regular.otf</string>
+		<string>myriadpro_semibold.otf</string>
+		<string>myriadpro_semibolditalic.otf</string>
+		<string>montserrat_black.ttf</string>
+		<string>montserrat_blackitalic.ttf</string>
+		<string>montserrat_bold.ttf</string>
+		<string>montserrat_bolditalic.ttf</string>
+		<string>montserrat_extrabold.ttf</string>
+		<string>montserrat_extrabolditalic.ttf</string>
+		<string>montserrat_extralight.ttf</string>
+		<string>montserrat_extralightitalic.ttf</string>
+		<string>montserrat_italic.ttf</string>
+		<string>montserrat_light.ttf</string>
+		<string>montserrat_lightitalic.ttf</string>
+		<string>montserrat_medium.ttf</string>
+		<string>montserrat_mediumitalic.ttf</string>
+		<string>montserrat_regular.ttf</string>
+		<string>montserrat_semibold.ttf</string>
+		<string>montserrat_semibolditalic.ttf</string>
+		<string>montserrat_thin.ttf</string>
+		<string>montserrat_thinitalic.ttf</string>
 	</array>
 </dict>
 </plist>
