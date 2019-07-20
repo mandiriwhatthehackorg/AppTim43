@@ -73,6 +73,16 @@
 		<string>Montserrat-SemiBoldItalic.ttf</string>
 		<string>Montserrat-Thin.ttf</string>
 		<string>Montserrat-ThinItalic.ttf</string>
+		<string>MyriadPro-Bold.OTF</string>
+		<string>MyriadPro-BoldCondensed.OTF</string>
+		<string>MyriadPro-BoldCondensedItalic.OTF</string>
+		<string>MyriadPro-BoldItalic.OTF</string>
+		<string>MyriadPro-Condensed.OTF</string>
+		<string>MyriadPro-CondensedItalic.OTF</string>
+		<string>MyriadPro-Light.otf</string>
+		<string>MyriadPro-Regular.OTF</string>
+		<string>MyriadPro-Semibold.OTF</string>
+		<string>MyriadPro-SemiboldItalic.OTF</string>
 	</array>
 </dict>
 </plist>

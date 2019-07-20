@@ -81,7 +81,7 @@ const FOOTER_CONTENT: ViewStyle = {
 export interface WelcomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
-  nextScreen = () => this.props.navigation.navigate("demo")
+  nextScreen = () => this.props.navigation.navigate("home")
 
   render() {
     return (
@@ -97,7 +97,7 @@ export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
             titleStyle={HEADER_TITLE}
           />
           <Text style={TITLE_WRAPPER}>
-            <Text style={TITLE} text="Your new app, " />
+            <Text style={TITLE} text="Your news app, " />
             <Text style={ALMOST} text="almost" />
             <Text style={TITLE} text="!" />
           </Text>

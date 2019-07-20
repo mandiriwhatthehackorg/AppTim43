@@ -64,6 +64,16 @@
 		EB42E7A8FE8D44E683FA7330 /* libRNLocalize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4932F4D5669D44E38E86BD19 /* libRNLocalize.a */; };
 		46B0D519B452466B9D2FF88A /* libRNLocalize-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34303FD97A264C16B729269A /* libRNLocalize-tvOS.a */; };
 		B8CA55096D764D019A11CDBD /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98E778DB2F4526B3E696DF /* libSplashScreen.a */; };
+		93744658CE6C441AB7013E12 /* MyriadPro-Bold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 787CC1A5503B45A1919CA0BD /* MyriadPro-Bold.OTF */; };
+		D470C66A36A147D9998C74E5 /* MyriadPro-BoldCondensed.OTF in Resources */ = {isa = PBXBuildFile; fileRef = A548E6769A594D65BECEA03B /* MyriadPro-BoldCondensed.OTF */; };
+		09993394C08C4BF0A746A18C /* MyriadPro-BoldCondensedItalic.OTF in Resources */ = {isa = PBXBuildFile; fileRef = E568A6EE32184779B422FDC7 /* MyriadPro-BoldCondensedItalic.OTF */; };
+		5F4004987A4349978135D832 /* MyriadPro-BoldItalic.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 946A9229AA6F4650B2065A9E /* MyriadPro-BoldItalic.OTF */; };
+		6DB75F2A18B148D786B00B23 /* MyriadPro-Condensed.OTF in Resources */ = {isa = PBXBuildFile; fileRef = A180CC7D124E4EF399BE4A3D /* MyriadPro-Condensed.OTF */; };
+		E6F61A02134C455C9387733E /* MyriadPro-CondensedItalic.OTF in Resources */ = {isa = PBXBuildFile; fileRef = DF81AD214B7443F0A8CFFD8C /* MyriadPro-CondensedItalic.OTF */; };
+		2C942755043A489188DECD8A /* MyriadPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46D7B574CAEA4223B617005B /* MyriadPro-Light.otf */; };
+		5FBCDDA209F34472A414A276 /* MyriadPro-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 833DDC0B53414BA6A0913E3F /* MyriadPro-Regular.OTF */; };
+		DB3402198E374DBF8EABE298 /* MyriadPro-Semibold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 2B2A2F84B9C14EA6AE1683C5 /* MyriadPro-Semibold.OTF */; };
+		B0E721D64FAF4E78BC1499F0 /* MyriadPro-SemiboldItalic.OTF in Resources */ = {isa = PBXBuildFile; fileRef = D0672EB32C064838AA773F2C /* MyriadPro-SemiboldItalic.OTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,6 +411,16 @@
 		34303FD97A264C16B729269A /* libRNLocalize-tvOS.a */ = {isa = PBXFileReference; name = "libRNLocalize-tvOS.a"; path = "libRNLocalize-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		273340DEF23042A9825BA805 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "SplashScreen.xcodeproj"; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		7F98E778DB2F4526B3E696DF /* libSplashScreen.a */ = {isa = PBXFileReference; name = "libSplashScreen.a"; path = "libSplashScreen.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		787CC1A5503B45A1919CA0BD /* MyriadPro-Bold.OTF */ = {isa = PBXFileReference; name = "MyriadPro-Bold.OTF"; path = "../app/theme/fonts/MyriadPro-Bold.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A548E6769A594D65BECEA03B /* MyriadPro-BoldCondensed.OTF */ = {isa = PBXFileReference; name = "MyriadPro-BoldCondensed.OTF"; path = "../app/theme/fonts/MyriadPro-BoldCondensed.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E568A6EE32184779B422FDC7 /* MyriadPro-BoldCondensedItalic.OTF */ = {isa = PBXFileReference; name = "MyriadPro-BoldCondensedItalic.OTF"; path = "../app/theme/fonts/MyriadPro-BoldCondensedItalic.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		946A9229AA6F4650B2065A9E /* MyriadPro-BoldItalic.OTF */ = {isa = PBXFileReference; name = "MyriadPro-BoldItalic.OTF"; path = "../app/theme/fonts/MyriadPro-BoldItalic.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A180CC7D124E4EF399BE4A3D /* MyriadPro-Condensed.OTF */ = {isa = PBXFileReference; name = "MyriadPro-Condensed.OTF"; path = "../app/theme/fonts/MyriadPro-Condensed.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF81AD214B7443F0A8CFFD8C /* MyriadPro-CondensedItalic.OTF */ = {isa = PBXFileReference; name = "MyriadPro-CondensedItalic.OTF"; path = "../app/theme/fonts/MyriadPro-CondensedItalic.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		46D7B574CAEA4223B617005B /* MyriadPro-Light.otf */ = {isa = PBXFileReference; name = "MyriadPro-Light.otf"; path = "../app/theme/fonts/MyriadPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		833DDC0B53414BA6A0913E3F /* MyriadPro-Regular.OTF */ = {isa = PBXFileReference; name = "MyriadPro-Regular.OTF"; path = "../app/theme/fonts/MyriadPro-Regular.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2B2A2F84B9C14EA6AE1683C5 /* MyriadPro-Semibold.OTF */ = {isa = PBXFileReference; name = "MyriadPro-Semibold.OTF"; path = "../app/theme/fonts/MyriadPro-Semibold.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0672EB32C064838AA773F2C /* MyriadPro-SemiboldItalic.OTF */ = {isa = PBXFileReference; name = "MyriadPro-SemiboldItalic.OTF"; path = "../app/theme/fonts/MyriadPro-SemiboldItalic.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +719,16 @@
 				82ECBA3A50A446FAAF52B02E /* Montserrat-SemiBoldItalic.ttf */,
 				F1DC55E8ECDB47AEAA784733 /* Montserrat-Thin.ttf */,
 				8CF75D3384E7425482A4AB43 /* Montserrat-ThinItalic.ttf */,
+				787CC1A5503B45A1919CA0BD /* MyriadPro-Bold.OTF */,
+				A548E6769A594D65BECEA03B /* MyriadPro-BoldCondensed.OTF */,
+				E568A6EE32184779B422FDC7 /* MyriadPro-BoldCondensedItalic.OTF */,
+				946A9229AA6F4650B2065A9E /* MyriadPro-BoldItalic.OTF */,
+				A180CC7D124E4EF399BE4A3D /* MyriadPro-Condensed.OTF */,
+				DF81AD214B7443F0A8CFFD8C /* MyriadPro-CondensedItalic.OTF */,
+				46D7B574CAEA4223B617005B /* MyriadPro-Light.otf */,
+				833DDC0B53414BA6A0913E3F /* MyriadPro-Regular.OTF */,
+				2B2A2F84B9C14EA6AE1683C5 /* MyriadPro-Semibold.OTF */,
+				D0672EB32C064838AA773F2C /* MyriadPro-SemiboldItalic.OTF */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1168,6 +1198,16 @@
 				5528E51B80194A8A80D4729B /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				A00EFA784D7141EBBAC48818 /* Montserrat-Thin.ttf in Resources */,
 				5DD4AFDF7887406681A8CC5D /* Montserrat-ThinItalic.ttf in Resources */,
+				93744658CE6C441AB7013E12 /* MyriadPro-Bold.OTF in Resources */,
+				D470C66A36A147D9998C74E5 /* MyriadPro-BoldCondensed.OTF in Resources */,
+				09993394C08C4BF0A746A18C /* MyriadPro-BoldCondensedItalic.OTF in Resources */,
+				5F4004987A4349978135D832 /* MyriadPro-BoldItalic.OTF in Resources */,
+				6DB75F2A18B148D786B00B23 /* MyriadPro-Condensed.OTF in Resources */,
+				E6F61A02134C455C9387733E /* MyriadPro-CondensedItalic.OTF in Resources */,
+				2C942755043A489188DECD8A /* MyriadPro-Light.otf in Resources */,
+				5FBCDDA209F34472A414A276 /* MyriadPro-Regular.OTF in Resources */,
+				DB3402198E374DBF8EABE298 /* MyriadPro-Semibold.OTF in Resources */,
+				B0E721D64FAF4E78BC1499F0 /* MyriadPro-SemiboldItalic.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
