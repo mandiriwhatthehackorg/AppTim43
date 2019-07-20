@@ -5,6 +5,7 @@ import { HomeScreen } from "../screens/home-screen"
 import { LoginScreen } from "../screens/login-screen"
 import { RegisterScreen } from "../screens/register-screen"
 import { RegisterScreenOtp } from "../screens/register-screen-otp"
+import { RegisterScreenSaving } from "../screens/register-screen-saving"
 
 export const PrimaryNavigator = createStackNavigator(
   {
@@ -13,7 +14,8 @@ export const PrimaryNavigator = createStackNavigator(
     demo: { screen: DemoScreen },
     login: { screen: LoginScreen },
     register: { screen: RegisterScreen },
-    register_otp: { screen: RegisterScreenOtp }
+    register_otp: { screen: RegisterScreenOtp },
+    register_saving: { screen: RegisterScreenSaving }
   },
   {
     headerMode: "none",
