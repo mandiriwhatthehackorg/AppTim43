@@ -11,7 +11,8 @@ export const icons = {
   history: require("./history.png"),
   star: require("./star.png"),
   profile: require("./profilenav.png"),
-  wallet: require("./wallet.png")
+  wallet: require("./wallet.png"),
+  emoney: require("./emoney.png")
 }
 
 export type IconTypes = keyof typeof icons

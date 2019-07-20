@@ -62,6 +62,7 @@ export class BottomNavbar extends React.Component<any, any> {
       justifyContent: "center",
       alignItems: "center"
     }
+    
     return (
       <SafeAreaView>
         <View style={[ROW, {paddingHorizontal: spacing[4]}]}>

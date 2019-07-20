@@ -1,13 +1,15 @@
 import * as React from "react"
-import { View, TouchableHighlight, ViewStyle, TextStyle } from "react-native"
+import { View, Image, TouchableHighlight, ImageStyle, ViewStyle, TextStyle } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
+import Modal from "react-native-modal";
 import { mergeAll, flatten } from "ramda"
 import { Text } from "../../components/text"
 import { Screen } from "../../components/screen"
 import { Icon } from "../../components/icon"
 import { Button } from "../../components/button"
 import { BottomNavbar } from "../../components/bottom-navbar"
-import { color, spacing } from "../../theme"
+import { spacing } from "../../theme"
+import { intro } from "./"
 
 const ROW: ViewStyle = {
   flexDirection: "row"
@@ -101,6 +103,68 @@ class HomeIcon extends React.Component<any, {}> {
   }
 }
 
+class ModalIntro extends React.Component<any, any> {
+  state = {
+    isModalVisible: true
+  }
+
+  toggleModal = () => {
+    this.setState({ isModalVisible: !this.state.isModalVisible })
+  }
+
+  render () {
+    const MODAL: ViewStyle = {
+      backgroundColor: "#fff",
+      borderRadius: 5,
+      padding: spacing[4],
+      justifyContent: "center",
+      alignItems: "center"
+    }
+    const TITLE: TextStyle = {
+      color: "#1f5285",
+      fontWeight: "bold",
+      fontSize: 16,
+      textAlign: "center",
+      marginBottom: spacing[2]
+    }
+    const DESC: TextStyle = {
+      color: "#a0a0a0",
+      textAlign: "center",
+      fontSize: 12,
+      padding: spacing[3]
+    }
+    const IMAGE: ImageStyle = {
+      height: 150,
+      maxWidth: "100%",
+      marginVertical: spacing[5] * 2
+    }
+    const BUTTON: ViewStyle = {
+      width: "100%",
+      backgroundColor: "#6ab2e2",
+      marginTop: spacing[5]
+    }
+    const BUTTON_TEXT: TextStyle = {
+      padding: spacing[3],
+      fontSize: 15,
+      fontWeight: "600"
+    }
+
+    return (
+      <Modal
+        isVisible={this.state.isModalVisible}
+        onBackdropPress={this.toggleModal}
+      >
+        <View style={MODAL}>
+          <Image source={intro} style={IMAGE} />
+          <Text style={TITLE} text="Uang Kamu Cepat Habis?" />
+          <Text style={DESC} text="Mungkin ada yang salah dengan caramu mengelola keuangan. Yuk coba Financial Advisor dari Mandiri!" />
+          <Button textStyle={BUTTON_TEXT} style={BUTTON} text="COBA SEKARANG" />
+        </View>
+      </Modal>
+    )
+  }
+}
+
 export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
@@ -109,6 +173,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render () {
     return (
       <View style={{ flex: 1 }}>
+        <ModalIntro isVisible={true} />
         <Screen style={{ padding: spacing[5] }}>
           {/* Header */}
           <View style={ROW}>
@@ -153,7 +218,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           {/* Features */}
           <View style={[ROW, ICON_LIST]}>
             <HomeIcon iconName="transaksi" text="TRANSAKSI" />
-            <HomeIcon iconName="linkaja" text="E-MONEY" />
+            <HomeIcon iconName="emoney" text="E-MONEY" />
             <HomeIcon iconName="linkaja" text="LINKAJA" />
             <HomeIcon iconName="pinjam" text="PINJAM DANA" />
           </View>
@@ -161,7 +226,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
             <HomeIcon iconName="asuransi" text="ASURANSI" />
             <HomeIcon iconName="investasi" text="INVESTASI" />
             <HomeIcon iconName="kredit" text="AJUKAN KREDIT" />
-            <HomeIcon iconName="pinjam" text="PINJAM DANA" />
+            <HomeIcon iconName="" text="" />
           </View>
           {/* Recommendation */}
           <View>
