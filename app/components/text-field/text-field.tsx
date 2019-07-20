@@ -14,10 +14,17 @@ const CONTAINER: ViewStyle = {
 // the base styling for the TextInput
 const INPUT: TextStyle = {
   fontFamily: typography.primary,
-  color: color.text,
+  color: "#003d78",
   minHeight: 44,
   fontSize: 18,
+  fontWeight: "500",
   backgroundColor: color.palette.white,
+}
+
+// underline input
+const UNDERLINE: ViewStyle = {
+  borderBottomColor: "#6ab2e2",
+  borderBottomWidth: 2
 }
 
 // currently we have no presets, but that changes quickly when you build your app.
@@ -52,9 +59,14 @@ export class TextField extends React.Component<TextFieldProps, {}> {
     inputStyle = enhance(inputStyle, inputStyleOverride)
     const actualPlaceholder = placeholderTx ? translate(placeholderTx) : placeholder
 
+    const LABEL: TextStyle = {
+      color: "#47b9de",
+      fontWeight: "bold"
+    }
+
     return (
       <View style={containerStyle}>
-        <Text preset="fieldLabel" tx={labelTx} text={label} />
+        <Text preset="fieldLabel" style={LABEL} tx={labelTx} text={label} />
         <TextInput
           placeholder={actualPlaceholder}
           placeholderTextColor={color.palette.lighterGrey}
@@ -63,6 +75,7 @@ export class TextField extends React.Component<TextFieldProps, {}> {
           style={inputStyle}
           ref={forwardedRef}
         />
+        <View style={UNDERLINE} />
       </View>
     )
   }

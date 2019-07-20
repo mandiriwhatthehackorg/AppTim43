@@ -5,6 +5,7 @@ import { mergeAll, flatten } from "ramda"
 import { Text } from "../../components/text"
 import { Screen } from "../../components/screen"
 import { Icon } from "../../components/icon"
+import { Button } from "../../components/button"
 import { color, spacing } from "../../theme"
 
 const ROW: ViewStyle = {
@@ -102,6 +103,8 @@ class HomeIcon extends React.Component<any, {}> {
 export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
+  nextScreen = () => this.props.navigation.navigate("login")
+
   render () {
     return (
       <View style={{ flex: 1 }}>
@@ -155,6 +158,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           <View>
             <Text>REKOMENDASI</Text>
           </View>
+          <Button text="test" onPress={this.nextScreen} />
         </Screen>
       </View>
     )
