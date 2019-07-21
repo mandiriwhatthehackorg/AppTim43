@@ -262,7 +262,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           <View>
             <Text>REKOMENDASI</Text>
           </View>
-          <Button text="test" onPress={this.goToSummary} />
+          {/* <Button text="test" onPress={this.goToSummary} /> */}
         </Screen>
         <BottomNavbar navigation={this.props.navigation} />
       </View>
