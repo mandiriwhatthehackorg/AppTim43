@@ -70,7 +70,7 @@ export class BottomNavbar extends React.Component<BottomNavbarNavigation, any> {
     
     return (
       <SafeAreaView>
-        <View style={[ROW, {paddingHorizontal: spacing[4]}]}>
+        <View style={[ROW, {paddingHorizontal: spacing[4], paddingBottom: spacing[3]}]}>
           <View style={[ROW, PART]}>
             <NavIcon icon="home" text="Beranda" />
             <NavIcon icon="history" text="Histori" />

@@ -122,7 +122,7 @@ class HomeIcon extends React.Component<any, {}> {
 
 class ModalIntro extends React.Component<any, any> {
   state = {
-    isModalVisible: false
+    isModalVisible: true
   }
 
   toggleModal = () => {
