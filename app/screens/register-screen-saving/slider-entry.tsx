@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { View, Text, Image, TouchableOpacity, ImageStyle, TextStyle, ViewStyle, Dimensions, Platform  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ImageStyle, TextStyle, ViewStyle, Dimensions, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { ParallaxImage } from 'react-native-snap-carousel';
+import { spacing } from "../../theme"
 
 const colors = {
   black: '#1a1917',
@@ -19,8 +20,8 @@ function wp (percentage) {
 }
 
 const slideHeight = viewportHeight * 0.36;
-const slideWidth = wp(275);
-const itemHorizontalMargin = wp(2);
+const slideWidth = wp(75);
+const itemHorizontalMargin = wp(1);
 
 const sliderWidth = viewportWidth;
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
@@ -28,39 +29,50 @@ const itemWidth = slideWidth + itemHorizontalMargin * 2;
 const entryBorderRadius = 8;
 
 const slideInnerContainer: ViewStyle = {
-    width: itemWidth,
+    width: 220,
     height: slideHeight,
     paddingHorizontal: itemHorizontalMargin,
-    paddingBottom: 18 // needed for shadow
+    paddingBottom: 18, // needed for shadow,
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 1
+    }
 }
-const shadow: ViewStyle = {
+const SHADOW: ViewStyle = {
     position: 'absolute',
     top: 0,
     left: itemHorizontalMargin,
     right: itemHorizontalMargin,
     bottom: 18,
-    shadowColor: colors.black,
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 10 },
-    shadowRadius: 10,
-    borderRadius: entryBorderRadius
+    // shadowColor: colors.black,
+    // shadowOpacity: 0.25,
+    // shadowOffset: { width: 0, height: 10 },
+    // shadowRadius: 10,
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    borderRadius: entryBorderRadius,
+    backgroundColor: "white"
 }
 const imageContainer: ImageStyle = {
     flex: 1,
     marginBottom: IS_IOS ? 0 : -1, // Prevent a random Android rendering issue
-    backgroundColor: 'green',
     borderTopLeftRadius: entryBorderRadius,
-    borderTopRightRadius: entryBorderRadius
+    borderTopRightRadius: entryBorderRadius,
+    overflow: "hidden",
 }
-const imageContainerEven: ViewStyle = {
-    backgroundColor: colors.black
-}
-const image: ImageStyle = {
-    // ...StyleSheet.absoluteFillObject,
+const IMAGE: ImageStyle = {
+    ...StyleSheet.absoluteFillObject,
     resizeMode: 'cover',
     borderRadius: IS_IOS ? entryBorderRadius : 0,
     borderTopLeftRadius: entryBorderRadius,
-    borderTopRightRadius: entryBorderRadius
+    borderTopRightRadius: entryBorderRadius,
+    width: "100%"
 }
 // image's border radius is buggy on iOS; let's hack it!
 const radiusMask: ViewStyle = {
@@ -71,9 +83,6 @@ const radiusMask: ViewStyle = {
     height: entryBorderRadius,
     backgroundColor: 'white'
 }
-const radiusMaskEven: ViewStyle = {
-    backgroundColor: colors.black
-}
 const textContainer: ViewStyle = {
     justifyContent: 'center',
     paddingTop: 20 - entryBorderRadius,
@@ -83,19 +92,17 @@ const textContainer: ViewStyle = {
     borderBottomLeftRadius: entryBorderRadius,
     borderBottomRightRadius: entryBorderRadius
 }
-const textContainerEven: ViewStyle = {
-    backgroundColor: colors.black
-}
-const title: TextStyle = {
-    color: colors.black,
+const TITLE: TextStyle = {
+    color: "#1f5285",
     fontSize: 13,
     fontWeight: 'bold',
-    letterSpacing: 0.5
+    letterSpacing: 0.5,
+    marginBottom: spacing[2]
 }
 const titleEven: TextStyle = {
     color: 'white'
 }
-const subtitle: TextStyle = {
+const SUBTITLE: TextStyle = {
     marginTop: 6,
     color: colors.gray,
     fontSize: 12,
@@ -105,66 +112,6 @@ const subtitleEven: TextStyle = {
     color: 'rgba(255, 255, 255, 0.7)'
 }
 
-// const safeArea: ViewStyle = {
-//   flex: 1,
-//   backgroundColor: colors.black
-// }
-// const container: ViewStyle = {
-//   flex: 1,
-//   backgroundColor: colors.background1
-// }
-// const gradient: ViewStyle = {
-//   ...StyleSheet.absoluteFillObject
-// }
-// const scrollview: ViewStyle = {
-//   flex: 1
-// }
-// const exampleContainer: ViewStyle = {
-//   paddingVertical: 30
-// }
-// const exampleContainerDark: ViewStyle = {
-//   backgroundColor: colors.black
-// }
-// const exampleContainerLight: ViewStyle = {
-//   backgroundColor: 'white'
-// }
-// const title: TextStyle = {
-//   paddingHorizontal: 30,
-//   backgroundColor: 'transparent',
-//   color: 'rgba(255, 255, 255, 0.9)',
-//   fontSize: 20,
-//   fontWeight: 'bold',
-//   textAlign: 'center'
-// }
-// const titleDark: TextStyle = {
-//   color: colors.black
-// }
-// const subtitle: TextStyle = {
-//   marginTop: 5,
-//   paddingHorizontal: 30,
-//   backgroundColor: 'transparent',
-//   color: 'rgba(255, 255, 255, 0.75)',
-//   fontSize: 13,
-//   fontStyle: 'italic',
-//   textAlign: 'center'
-// }
-// const slider: ViewStyle = {
-//   marginTop: 15,
-//   overflow: 'visible' // for custom animations
-// }
-// const sliderContentContainer: ViewStyle = {
-//   paddingVertical: 10 // for custom animation
-// }
-// const paginationContainer: ViewStyle = {
-//   paddingVertical: 8
-// }
-// const paginationDot: ViewStyle = {
-//   width: 8,
-//   height: 8,
-//   borderRadius: 4,
-//   marginHorizontal: 8
-// }
-
 export default class SliderEntry extends React.Component<any, any> {
 
   static propTypes = {
@@ -172,58 +119,33 @@ export default class SliderEntry extends React.Component<any, any> {
     even: PropTypes.bool,
     parallax: PropTypes.bool,
     parallaxProps: PropTypes.object
-  };
-
-  get image () {
-    const { data: { illustration }, parallax, parallaxProps, even } = this.props;
-
-    return parallax ? (
-      <ParallaxImage
-        source={{ uri: illustration }}
-        containerStyle={[imageContainer, even ? imageContainerEven : {}]}
-        style={image}
-        parallaxFactor={0.35}
-        showSpinner={true}
-        spinnerColor={even ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.25)'}
-        {...parallaxProps}
-      />
-    ) : (
-      <Image
-        source={{ uri: illustration }}
-        style={image}
-      />
-    );
   }
 
   render () {
-    const { data: { title, subtitle }, even } = this.props;
-
-    const uppercaseTitle = title ? (
-      <Text
-        style={[title, even ? titleEven : {}]}
-        numberOfLines={2}
-      >
-          { title.toUpperCase() }
-      </Text>
-    ) : false;
+    const { data: { title, subtitle, illustration } } = this.props;
 
     return (
       <TouchableOpacity
         activeOpacity={1}
         style={slideInnerContainer}
-        onPress={() => { alert(`You've clicked '${title}'`); }}
+        onPress={() => { alert(`Anda memilih '${title}'`); }}
       >
-        <View style={shadow} />
-        <View style={[imageContainer, even ? imageContainerEven : {}]}>
-          { this.image }
-          <View style={[radiusMask, even ? radiusMaskEven : {}]} />
+        <View style={SHADOW} />
+        <View style={imageContainer}>
+          <Image
+            source={ illustration }
+            style={IMAGE}
+          />
+          <View style={radiusMask} />
         </View>
-        <View style={[textContainer, even ? textContainerEven : {}]}>
-          { uppercaseTitle }
+        <View style={textContainer}>
           <Text
-            style={[subtitle, even ? subtitleEven : {}]}
+            style={TITLE}
             numberOfLines={2}
           >
+            { title.toUpperCase() }
+          </Text>
+          <Text style={SUBTITLE} numberOfLines={2}>
             { subtitle }
           </Text>
         </View>

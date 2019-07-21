@@ -83,8 +83,10 @@ const ICON_LIST: ViewStyle = {
 }
 
 class HomeIcon extends React.Component<any, {}> {
-  constructor(props: any) {
-    super(props)
+  nextPage = () => {
+    if (this.props.goto) {
+      this.props.navigation.navigate(this.props.goto)
+    }
   }
 
   render () {
@@ -106,7 +108,7 @@ class HomeIcon extends React.Component<any, {}> {
       justifyContent: "center"
     }
     return (
-      <TouchableHighlight style={TOUCH} underlayColor="#e8e8e8" onPress={() => {}}>
+      <TouchableHighlight style={TOUCH} underlayColor="#e8e8e8" onPress={this.nextPage}>
         <View style={VIEW}>
           <Icon style={{ height: 40 }} icon={this.props.iconName} />
           <Text style={ICON_TEXT}>{this.props.text}</Text>
@@ -120,7 +122,7 @@ class HomeIcon extends React.Component<any, {}> {
 
 class ModalIntro extends React.Component<any, any> {
   state = {
-    isModalVisible: true
+    isModalVisible: false
   }
 
   toggleModal = () => {
@@ -198,11 +200,11 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render () {
     return (
       <View style={{ flex: 1 }}>
+        <ModalIntro
+          isVisible={true}
+          navigation={this.props.navigation}
+        />
         <Screen style={{ padding: spacing[5] }}>
-          <ModalIntro
-            isVisible={true}
-            navigation={this.props.navigation}
-          />
           {/* Header */}
           <View style={ROW}>
             <View style={PROFILE}>
@@ -252,7 +254,7 @@ export class HomeScreen extends React.Component<HomeScreenProps, {}> {
           </View>
           <View style={[ROW, ICON_LIST]}>
             <HomeIcon iconName="asuransi" text="ASURANSI" />
-            <HomeIcon iconName="investasi" text="INVESTASI" />
+            <HomeIcon navigation={this.props.navigation} iconName="investasi" goto="invest" text="INVESTASI" />
             <HomeIcon iconName="kredit" text="AJUKAN KREDIT" />
             <HomeIcon iconName="" text="" />
           </View>

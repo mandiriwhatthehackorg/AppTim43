@@ -10,23 +10,25 @@ import { Button } from "../../components/button";
 const BG: ViewStyle = {
   backgroundColor: "#1f5285"
 }
+const BG_WHITE: ViewStyle = {
+  backgroundColor: "#fff",
+  height: "100%",
+  marginTop: spacing[5] * 5
+}
 const ROW: ViewStyle = {
   flexDirection: "row"
 }
 const CONTENT: ViewStyle = {
-  marginTop: spacing[5] * 3,
-  backgroundColor: "#fff",
+  position: "absolute",
+  top: spacing[5] * 3.5,
+  marginTop: spacing[0],
   height: "100%",
   paddingHorizontal: spacing[5],
-  paddingTop: spacing[5] * 4
+  paddingTop: spacing[5]
 }
 const ACCOUNT: ViewStyle = {
-  position: "absolute",
-  top: spacing[5] * 4,
   backgroundColor: "#fff",
-  margin: spacing[5],
-  left: 0,
-  right: 0,
+  marginBottom: spacing[4],
   borderRadius: 5,
   paddingHorizontal: spacing[5],
   paddingTop: spacing[4],
@@ -168,13 +170,14 @@ export class SummaryScreen extends React.Component<SummaryScreenProps, {}> {
             onLeftPress={this.goBack}
             headerText="Ringkasan Keuanganku"
           />
-          <View style={ACCOUNT}>
-            <Text style={ACCOUNT_TITLE} text="Saldo" />
-            <Text style={ACCOUNT_NUMBER} text="Rp 10.000.000" />
-            <Text style={[ACCOUNT_TITLE, {marginTop: spacing[5]}]} text="No. Rekening" />
-            <Text style={ACCOUNT_NUMBER} text="900 00 190456 70" />
-          </View>
+          <View style={BG_WHITE} />
           <View style={CONTENT}>
+            <View style={ACCOUNT}>
+              <Text style={ACCOUNT_TITLE} text="Saldo" />
+              <Text style={ACCOUNT_NUMBER} text="Rp 10.000.000" />
+              <Text style={[ACCOUNT_TITLE, {marginTop: spacing[5]}]} text="No. Rekening" />
+              <Text style={ACCOUNT_NUMBER} text="900 00 190456 70" />
+            </View>
             {/* Action */}
             <View style={[ROW, {marginBottom: spacing[4]}]}>
               <Button

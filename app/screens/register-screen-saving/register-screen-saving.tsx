@@ -1,5 +1,5 @@
 import * as React from "React"
-import { View, ViewStyle, TextStyle, SafeAreaView } from "react-native"
+import { View, ViewStyle, TextStyle, SafeAreaView, Dimensions } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import Carousel from "react-native-snap-carousel"
 import { Screen } from "../../components/screen"
@@ -68,6 +68,74 @@ const CAROUSEL: ViewStyle = {
   alignItems: "center"
 }
 
+const colors = {
+  black: '#1a1917',
+  gray: '#888888',
+  background1: '#B721FF',
+  background2: '#21D4FD'
+}
+
+const safeArea: ViewStyle = {
+  flex: 1,
+  backgroundColor: colors.black
+}
+const container: ViewStyle = {
+  flex: 1,
+  backgroundColor: colors.background1
+}
+const gradient: ViewStyle = {
+  // ...StyleSheet.absoluteFillObject
+}
+const scrollview: ViewStyle = {
+  flex: 1
+}
+const exampleContainer: ViewStyle = {
+  paddingVertical: 30
+}
+const exampleContainerDark: ViewStyle = {
+  backgroundColor: colors.black
+}
+const exampleContainerLight: ViewStyle = {
+  backgroundColor: 'white'
+}
+const title: TextStyle = {
+  paddingHorizontal: 30,
+  backgroundColor: 'transparent',
+  color: 'rgba(255, 255, 255, 0.9)',
+  fontSize: 20,
+  fontWeight: 'bold',
+  textAlign: 'center'
+}
+const titleDark: TextStyle = {
+  color: colors.black
+}
+const subtitle: TextStyle = {
+  marginTop: 5,
+  paddingHorizontal: 30,
+  backgroundColor: 'transparent',
+  color: 'rgba(255, 255, 255, 0.75)',
+  fontSize: 13,
+  fontStyle: 'italic',
+  textAlign: 'center'
+}
+const slider: ViewStyle = {
+  marginTop: 15,
+  overflow: 'visible' // for custom animations
+}
+const sliderContentContainer: ViewStyle = {
+  paddingVertical: 10 // for custom animation
+}
+const paginationContainer: ViewStyle = {
+  paddingVertical: 8
+}
+const paginationDot: ViewStyle = {
+  width: 8,
+  height: 8,
+  borderRadius: 4,
+  marginHorizontal: 8
+}
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+
 export interface RegisterScreenSavingProps extends NavigationScreenProps<{}> {}
 
 export class RegisterScreenSaving extends React.Component<RegisterScreenSavingProps, {}> {
@@ -78,34 +146,34 @@ export class RegisterScreenSaving extends React.Component<RegisterScreenSavingPr
   }
   entries = [
     {
-        title: 'Beautiful and dramatic Antelope Canyon',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'https://i.imgur.com/UYiroysl.jpg'
+        title: 'Tabungan Rupiah',
+        subtitle: 'Kemudahan menabung untuk kenyamanan hidup',
+        illustration: require('./1.jpg')
     },
     {
-        title: 'Earlier this morning, NYC',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'https://i.imgur.com/UPrs1EWl.jpg'
+        title: 'Tabungan Valas',
+        subtitle: 'Keuntungan lebih untuk simpanan valuta asing',
+        illustration: require('./2.jpg')
     },
     {
-        title: 'White Pocket Sunset',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-        illustration: 'https://i.imgur.com/MABUbpDl.jpg'
+        title: 'Tabungan Rencana',
+        subtitle: 'Mewujudkan hidup di masa depan dengan pengelolaan keuangan yang lebih terencana',
+        illustration: require('./3.jpg')
     },
     {
-        title: 'Acrocorinth, Greece',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'https://i.imgur.com/KZsmUi2l.jpg'
+        title: 'TabunganKu',
+        subtitle: 'Hidup lebih sejahtera bersama TabunganKu',
+        illustration: require('./4.jpg')
     },
     {
-        title: 'The lone tree, majestic landscape of New Zealand',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'https://i.imgur.com/2nCt3Sbl.jpg'
+        title: 'Deposito Rupiah',
+        subtitle: 'Pilihan investasi yang memberi keuntungan dan rasa aman',
+        illustration: require('./5.jpg')
     },
     {
-        title: 'Middle Earth, Germany',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'https://i.imgur.com/lceHsT6l.jpg'
+        title: 'Deposito Valas',
+        subtitle: 'Pilihan investasi untuk ragam pilihan mata uang',
+        illustration: require('./6.jpg')
     }
   ]
 
@@ -134,9 +202,16 @@ export class RegisterScreenSaving extends React.Component<RegisterScreenSavingPr
               ref={c => this._slider1Ref = c}
               data={this.entries}
               renderItem={this._renderItem}
-              sliderWidth={300}
-              itemWidth={100}
+              hasParallaxImages={true}
+              sliderWidth={viewportWidth}
+              itemWidth={220}
+              containerCustomStyle={slider}
+              contentContainerCustomStyle={sliderContentContainer}
               layout="default"
+              autoplay={true}
+              autoplayDelay={500}
+              autoplayInterval={3000}
+              loop={true}
             />
           </View>
         </Screen>

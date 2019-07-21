@@ -9,6 +9,7 @@ import { RegisterScreenSaving } from "../screens/register-screen-saving"
 import { RegisterScreenKyc } from "../screens/register-screen-kyc"
 import { RegisterScreenSign } from "../screens/register-screen-sign"
 import { SummaryScreen } from "../screens/summary-screen"
+import { InvestScreen } from "../screens/invest-screen"
 
 export const PrimaryNavigator = createStackNavigator(
   {
@@ -21,7 +22,8 @@ export const PrimaryNavigator = createStackNavigator(
     register_saving: { screen: RegisterScreenSaving },
     register_kyc: { screen: RegisterScreenKyc },
     register_sign: { screen: RegisterScreenSign },
-    summary: { screen: SummaryScreen }
+    summary: { screen: SummaryScreen },
+    invest: { screen: InvestScreen }
   },
   {
     headerMode: "none",
